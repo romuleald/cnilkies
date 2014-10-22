@@ -86,9 +86,11 @@ var CookieBanner = function (options) {
         onAccept();
     }
 
-    debug.onclick = function () {
+    debug.onclick = function (e) {
         console.info('debug remove cookies');
+        this.innerHTML = 'NOW!';
         setCookie(cookieName, false, new Date(0));
+        e.stopImmediatePropagation();
     };
 
     this.setCookies = setCookie;
