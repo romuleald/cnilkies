@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>kikooknil</title>
+    <link rel="stylesheet" href="css/idea.css"/>
     <style type="text/css">
         #cnil {
             left: 0;
@@ -12,6 +13,7 @@
             background: khaki;
             display: none;
         }
+
         #debug {
             position: fixed;
             right: 0;
@@ -21,354 +23,502 @@
             background: red;
             text-align: center;
         }
+
+        pre {
+            display: inline-block
+        }
+        code {
+            border: solid 1px rgba(100, 100, 100, .5);
+            padding: 0;
+            display: inline-block;
+            transition: all 125ms;
+        }
+
     </style>
 </head>
 <body>
-<div id="debug">remove cookies</div>
+<div id="debug">PUT DAT COOKIES DOWN</div>
 <div id="cnil">
     Utiliser les cookies c'est pas bien <span class="JS_accept_cookies">[ok]</span>
 </div>
+
+<h1>Instruction</h1>
+
+<h2>Code</h2>
+
+<div class="javascript">
+    <pre><code>new CookieBanner({
+    element: cnil,
+    analytics: true,
+    activation: {
+        scroll: true,
+        click: true,
+        button: true
+    },
+    buttonAcceptClass: 'JS_accept_cookies',
+    onCookieNotSet: function () {
+        cnil.style.display = 'block';
+    },
+    onAccept: function () {
+        cnil.style.display = 'none';
+        initTracking();
+    }
+});</code></pre>
+</div>
+<h2>Explication</h2>
+<ul>
+    <li><strong>element</strong> Élement DOM du bandeau</li>
+    <li><strong>analytics</strong> (?)</li>
+    <li><strong>activation</strong>
+        <ul>
+            <li><strong>scroll</strong> active le cookies au scroll</li>
+            <li><strong>click</strong> active le cookies au clic n'importe où dans la page</li>
+            <li><strong>button</strong> active le cookies au clic su rle bouton dédié du bandeau</li>
+        </ul>
+    </li>
+    <li><strong>buttonAcceptClass</strong> Class CSS du bouton (à revoir)</li>
+    <li><strong>onCookieNotSet</strong> Fonction exécuté lorsque le cookies n'est pas accepté</li>
+    <li><strong>onAccept</strong> Fonction exécuté lorsque le cookies est accepté, au chargement si déjà accepté, ou lors de l'acceptation du-dit cookies</li>
+</ul>
+<hr/>
+<hr/>
+<hr/>
+<h2>Texte aléatoire pour faire du scroll : <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_du_Japon_(1998)">Parti libéral du Japon</a>.</h2>
+<hr/>
+<hr/>
+<hr/>
 <!-- content from the page http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_du_Japon_(1998) -->
 <div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr">
-    <div class="homonymie"><a href="http://fr.wikipedia.org/wiki/Aide:Homonymie" title="Aide:Homonymie"><img alt="Page d'aide sur l'homonymie" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/20px-Disambig_colour.svg.png" width="20" height="15"
-                                                                                      srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/30px-Disambig_colour.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/40px-Disambig_colour.svg.png 2x"
-                                                                                      data-file-width="272" data-file-height="200"></a> Pour les articles homonymes, voir <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_du_Japon" title="Parti libéral du Japon">Parti libéral du Japon</a>.
-    </div>
-    <table class="infobox_v2" cellspacing="7">
-        <tbody>
-        <tr>
-            <td colspan="2" class="entete defaut" style="background-color:#E1E1E1;color:#000000">自由党<br>
-                <i>Jiyūtō</i></td>
-        </tr>
-        <tr>
-            <th scope="col" colspan="2" style="text-align:center;background-color:#E1E1E1;color:#000000">Présentation</th>
-        </tr>
-        <tr>
-            <th scope="row">Fondation</th>
-            <td><span class="date-lien nowrap datasortkey" data-sort-value="1998-01-06"><a href="http://fr.wikipedia.org/wiki/6_janvier" title="6 janvier">6</a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span></td>
-        </tr>
-        <tr>
-            <th scope="row">Disparition</th>
-            <td><span class="date-lien nowrap datasortkey" data-sort-value="2003-09-26"><a href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> <a href="http://fr.wikipedia.org/wiki/Septembre_2003" title="Septembre 2003">septembre</a> <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a></span> (dissout dans le <a
+<div class="homonymie"><a href="http://fr.wikipedia.org/wiki/Aide:Homonymie" title="Aide:Homonymie"><img alt="Page d'aide sur l'homonymie" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/20px-Disambig_colour.svg.png" width="20" height="15"
+                                                                                                         srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/30px-Disambig_colour.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/40px-Disambig_colour.svg.png 2x"
+                                                                                                         data-file-width="272" data-file-height="200"></a> Pour les articles homonymes, voir <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_du_Japon" title="Parti libéral du Japon">Parti libéral
+    du Japon</a>.
+</div>
+<table class="infobox_v2" cellspacing="7">
+    <tbody>
+    <tr>
+        <td colspan="2" class="entete defaut" style="background-color:#E1E1E1;color:#000000">自由党<br>
+            <i>Jiyūtō</i></td>
+    </tr>
+    <tr>
+        <th scope="col" colspan="2" style="text-align:center;background-color:#E1E1E1;color:#000000">Présentation</th>
+    </tr>
+    <tr>
+        <th scope="row">Fondation</th>
+        <td><span class="date-lien nowrap datasortkey" data-sort-value="1998-01-06"><a href="http://fr.wikipedia.org/wiki/6_janvier" title="6 janvier">6</a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">Disparition</th>
+        <td><span class="date-lien nowrap datasortkey" data-sort-value="2003-09-26"><a href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> <a href="http://fr.wikipedia.org/wiki/Septembre_2003" title="Septembre 2003">septembre</a> <a href="http://fr.wikipedia.org/wiki/2003"
+                                                                                                                                                                                                                                                                  title="2003">2003</a></span> (dissout dans
+            le <a
                     href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a>)
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">Ancien président</th>
-            <td><a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></td>
-        </tr>
-        <tr>
-            <th scope="row">Idéologie</th>
-            <td><b><a href="http://fr.wikipedia.org/wiki/Centre-droit" title="Centre-droit" class="mw-redirect">centre-droit</a></b>, <a href="http://fr.wikipedia.org/wiki/Lib%C3%A9ralisme" title="Libéralisme">libéralisme</a></td>
-        </tr>
-        <tr>
-            <th scope="row">Affiliation internationale</th>
-            <td><a href="http://fr.wikipedia.org/wiki/Internationale_lib%C3%A9rale" title="Internationale libérale">Internationale libérale</a></td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="http://fr.wikipedia.org/wiki/Couleur_politique" title="Couleur politique">Couleurs</a></th>
-            <td><a href="http://fr.wikipedia.org/wiki/Jaune" title="Jaune">jaune</a> (informellement)</td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
-    <p>Le <b>Parti libéral</b> <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">自由党</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i><b>Jiyūtō</b></i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
-                                                                                                                                                                                                                                                                               style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
-            href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span> est un ancien <a href="http://fr.wikipedia.org/wiki/Parti_politique" title="Parti politique">parti politique</a> <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">japonais</a> fondé le <span class="date-lien nowrap datasortkey"
-                                                                                                                                                                                                                                                         data-sort-value="1998-01-06"><a
-            href="http://fr.wikipedia.org/wiki/6_janvier" title="6 janvier">6</a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span> (date de son congrès fondateur, officiellement sa création est établie au <span class="date-lien nowrap datasortkey"
-                                                                                                                                                                                                                                                           data-sort-value="1998-01-01"><a
-            href="http://fr.wikipedia.org/wiki/1er_janvier" title="1er janvier"><abbr class="abbr" title="premier">1<sup>er</sup></abbr></a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span>) et dissous dans le <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon"
-                                                                                                                                                                                                                                                             title="Parti démocrate du Japon">Parti
-        démocrate du Japon</a> (PDJ) le <span class="date-lien nowrap datasortkey" data-sort-value="2003-09-26"><a href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> <a href="http://fr.wikipedia.org/wiki/Septembre_2003" title="Septembre 2003">septembre</a> <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a></span>.</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">Ancien président</th>
+        <td><a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></td>
+    </tr>
+    <tr>
+        <th scope="row">Idéologie</th>
+        <td><b><a href="http://fr.wikipedia.org/wiki/Centre-droit" title="Centre-droit" class="mw-redirect">centre-droit</a></b>, <a href="http://fr.wikipedia.org/wiki/Lib%C3%A9ralisme" title="Libéralisme">libéralisme</a></td>
+    </tr>
+    <tr>
+        <th scope="row">Affiliation internationale</th>
+        <td><a href="http://fr.wikipedia.org/wiki/Internationale_lib%C3%A9rale" title="Internationale libérale">Internationale libérale</a></td>
+    </tr>
+    <tr>
+        <th scope="row"><a href="http://fr.wikipedia.org/wiki/Couleur_politique" title="Couleur politique">Couleurs</a></th>
+        <td><a href="http://fr.wikipedia.org/wiki/Jaune" title="Jaune">jaune</a> (informellement)</td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<p>Le <b>Parti libéral</b> <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">自由党</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i><b>Jiyūtō</b></i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
+                                                                                                                                                                                                                                                                           style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
+        href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span> est un ancien <a href="http://fr.wikipedia.org/wiki/Parti_politique" title="Parti politique">parti politique</a> <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">japonais</a>
+    fondé le <span class="date-lien nowrap datasortkey"
+                   data-sort-value="1998-01-06"><a
+            href="http://fr.wikipedia.org/wiki/6_janvier" title="6 janvier">6</a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span> (date de son congrès fondateur, officiellement sa création
+    est établie au <span class="date-lien nowrap datasortkey"
+                         data-sort-value="1998-01-01"><a
+            href="http://fr.wikipedia.org/wiki/1er_janvier" title="1er janvier"><abbr class="abbr" title="premier">1<sup>er</sup></abbr></a> <a href="http://fr.wikipedia.org/wiki/Janvier_1998" title="Janvier 1998">janvier</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span>)
+    et dissous dans le <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon"
+                          title="Parti démocrate du Japon">Parti
+        démocrate du Japon</a> (PDJ) le <span class="date-lien nowrap datasortkey" data-sort-value="2003-09-26"><a href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> <a href="http://fr.wikipedia.org/wiki/Septembre_2003" title="Septembre 2003">septembre</a> <a
+            href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a></span>.</p>
 
-    <p></p>
+<p></p>
 
-    <div id="toc" class="toc">
-        <div id="toctitle">
-            <h2>Sommaire</h2>
-            <span class="toctoggle">&nbsp;[<a href="#" id="togglelink">masquer</a>]&nbsp;</span></div>
+<div id="toc" class="toc">
+    <div id="toctitle">
+        <h2>Sommaire</h2>
+        <span class="toctoggle">&nbsp;[<a href="#" id="togglelink">masquer</a>]&nbsp;</span></div>
+    <ul>
+        <li class="toclevel-1 tocsection-1"><a href="#Id.C3.A9ologie_et_positionnements"><span class="tocnumber">1</span> <span class="toctext">Idéologie et positionnements</span></a></li>
+        <li class="toclevel-1 tocsection-2"><a href="#R.C3.A9sultats_.C3.A9lectoraux"><span class="tocnumber">2</span> <span class="toctext">Résultats électoraux</span></a></li>
+        <li class="toclevel-1 tocsection-3"><a href="#Direction"><span class="tocnumber">3</span> <span class="toctext">Direction</span></a></li>
+        <li class="toclevel-1 tocsection-4"><a href="#R.C3.A9f.C3.A9rences"><span class="tocnumber">4</span> <span class="toctext">Références</span></a></li>
+        <li class="toclevel-1 tocsection-5"><a href="#Articles_connexes"><span class="tocnumber">5</span> <span class="toctext">Articles connexes</span></a></li>
+    </ul>
+</div>
+<p></p>
+
+<h2><span class="mw-headline" id="Id.C3.A9ologie_et_positionnements">Idéologie et positionnements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=1"
+                                                                                                                                                                                     title="Modifier la section : Idéologie et positionnements" class="mw-editsection-visualeditor">modifier</a><span
+        class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=1" title="Modifier la section : Idéologie et positionnements">modifier le code</a><span class="mw-editsection-bracket">]</span></span>
+</h2>
+
+<p>Il est créé par 54 <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Parlementaires</a> (42 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a> et 12 <a
+        href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_du_Japon"
+        title="Chambre des conseillers du Japon" class="mw-redirect">conseillers</a>,
+    à quoi s'ajoutent rapidement deux députés supplémentaires au cours de l'année <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Tatsuo_Sasayama&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Tatsuo Sasayama (page inexistante)">Tatsuo Sasayama</a> et <a
+            href="http://fr.wikipedia.org/w/index.php?title=Yoshihito_Iwasa&amp;action=edit&amp;redlink=1" class="new" title="Yoshihito Iwasa (page inexistante)">Yoshihito Iwasa</a>) issus de l'ancien <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>,
+    parti de <a href="http://fr.wikipedia.org/wiki/Centre-droit"
+                title="Centre-droit"
+                class="mw-redirect">centre-droit</a>
+    qui a constitué la principale force d'opposition au <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> de sa création le <span class="date-lien nowrap datasortkey" data-sort-value="1994-12-10"><a
+            href="http://fr.wikipedia.org/wiki/10_d%C3%A9cembre" title="10 décembre">10</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_1994" title="Décembre 1994">décembre</a> <a href="http://fr.wikipedia.org/wiki/1994" title="1994">1994</a></span> à sa dissolution le <span
+            class="date-lien nowrap datasortkey" data-sort-value="1997-12-27"><a
+            href="http://fr.wikipedia.org/wiki/27_d%C3%A9cembre" title="27 décembre">27</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_1997" title="Décembre 1997">décembre</a> <a href="http://fr.wikipedia.org/wiki/1997" title="1997">1997</a></span>. Emmené par <a
+            href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a>, ancien président du
+    <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>, et essentiellement constitué de dissidents du <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>, il
+    défend une plateforme <a
+            href="http://fr.wikipedia.org/wiki/Lib%C3%A9ralisme" title="Libéralisme">libérale</a>, comme son nom l'indique, et fortement inspirée de la <a href="http://fr.wikipedia.org/wiki/R%C3%A9volution_conservatrice_(sens_moderne)" title="Révolution conservatrice (sens moderne)">révolution
+        conservatrice</a> <a
+            href="http://fr.wikipedia.org/wiki/Monde_anglo-saxon" title="Monde anglo-saxon">anglo-saxonne</a> des <a href="http://fr.wikipedia.org/wiki/Ann%C3%A9es_1980" title="Années 1980">années 1980</a> (réduction du poids de l'État et de l'administration centrale par la déconcentration et la
+    décentralisation, dérégulation des marchés
+    financiers). L'essentiel de sa doctrine politique reprend les idées développées par <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> en <a href="http://fr.wikipedia.org/wiki/1993" title="1993">1993</a> dans le livre <i>Plan pour réformer le Japon</i> <span
+            style="font-weight: normal">(<span
+            class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">日本 改造 計画</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Nihon Kaizō Keikaku</i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
+                                                                                                                                                                                                                              style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
+            href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span><sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite_crochet">[</span>1<span class="cite_crochet">]</span></a></sup> et est résumée dans le slogan du parti&nbsp;:
+    «&nbsp;Restauration
+    du Japon&nbsp;» <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">日本一新</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Nihon isshin</i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
+                                                                                                                                                                                                                                                                    style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
+            href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span>.</p>
+
+<p>Il milite également pour une réforme de la <a href="http://fr.wikipedia.org/wiki/Constitution_du_Japon" title="Constitution du Japon">Constitution du Japon</a> afin de la rendre plus adaptée aux valeurs japonaises et, tout en ne remettant pas en cause ses principes fondamentaux (pacifisme,
+    respect des droits de
+    l'Homme, souveraineté du peuple et coopération internationale), il appelle à la reconnaissance des <a href="http://fr.wikipedia.org/wiki/Forces_japonaises_d%27autod%C3%A9fense" title="Forces japonaises d'autodéfense">Forces d'autodéfense</a> comme une armée à part entière ayant le droit de
+    combattre dans le cadre
+    exclusif toutefois de la <a href="http://fr.wikipedia.org/wiki/Force_de_maintien_de_la_paix_des_Nations_unies" title="Force de maintien de la paix des Nations unies">Force de maintien de la paix</a> de l'<a href="http://fr.wikipedia.org/wiki/Organisation_des_Nations_unies"
+                                                                                                                                                                                                                   title="Organisation des Nations unies">ONU</a>. Il veut aussi
+    limiter le pouvoir législatif essentiellement à une seule chambre élue, la <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">Chambre des représentants</a>, tandis que la <a
+            href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)"
+            title="Chambre des conseillers (Japon)">Chambre des conseillers</a>
+    deviendrait une sorte de «&nbsp;Chambre des Lords sans pouvoir&nbsp;» sur le modèle britannique dont les membres seraient nommés à vie par l'<a href="http://fr.wikipedia.org/wiki/Empereur_du_Japon" title="Empereur du Japon">empereur du Japon</a> après avoir été désignés par les <a
+            href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">Représentants</a> pour s'être distingués au service de l'État ou du peuple, sans que cette fonction soit héréditaire<sup id="cite_ref-2" class="reference"><a
+            href="#cite_note-2"><span
+            class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup>.</p>
+
+<p>Sur le plan international, il fait partie de l'<a href="http://fr.wikipedia.org/wiki/Internationale_lib%C3%A9rale" title="Internationale libérale">Internationale libérale</a><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite_crochet">[</span>3<span
+        class="cite_crochet">]</span></a></sup>.</p>
+
+<p>Après plusieurs mois d'hésitations, le Parti libéral forme le <span class="date-lien nowrap datasortkey" data-sort-value="1998-11-19"><a href="http://fr.wikipedia.org/wiki/19_novembre" title="19 novembre">19</a> <a href="http://fr.wikipedia.org/wiki/Novembre_1998"
+                                                                                                                                                                                                                          title="Novembre 1998">novembre</a> <a href="http://fr.wikipedia.org/wiki/1998"
+                                                                                                                                                                                                                                                                title="1998">1998</a></span> une
+    coalition avec son ancien rival, le <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> de <a href="http://fr.wikipedia.org/wiki/Keiz%C5%8D_Obuchi" title="Keizō Obuchi">Keizō Obuchi</a><sup
+            id="cite_ref-4" class="reference"><a
+            href="#cite_note-4"><span class="cite_crochet">[</span>4<span class="cite_crochet">]</span></a></sup> et obtient un membre au sein du <a href="http://fr.wikipedia.org/wiki/Cabinet_du_Japon" title="Cabinet du Japon">Cabinet</a> entre <a href="http://fr.wikipedia.org/wiki/Janvier"
+                                                                                                                                                                                                                                                        title="Janvier">janvier</a> <a
+            href="http://fr.wikipedia.org/wiki/1999"
+            title="1999">1999</a>
+    et <a href="http://fr.wikipedia.org/wiki/Avril" title="Avril">avril</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a> (<a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new" title="Takeshi Noda (page inexistante)">Takeshi
+        Noda</a> puis <a href="http://fr.wikipedia.org/wiki/Toshihiro_Nikai"
+                         title="Toshihiro Nikai">Toshihiro Nikai</a>).
+    Cette alliance entraîne la dissidence de six <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, cinq rejoignant le <a href="http://fr.wikipedia.org/wiki/Nouveau_K%C5%8Dmeit%C5%8D" title="Nouveau Kōmeitō">Nouveau
+        Kōmeitō</a> et le sixième le <a
+            href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a>, nouveau grand parti d'opposition, mais apporte au Parti libéral le ralliement de deux députés dont l'ancien <a href="http://fr.wikipedia.org/wiki/Premier_ministre_du_Japon"
+                                                                                                                                                                                                                                       title="Premier ministre du Japon">Premier
+        ministre</a> et prédécesseur d'Ozawa à la tête du défunt <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>, <a href="http://fr.wikipedia.org/wiki/Toshiki_Kaifu" title="Toshiki Kaifu">Toshiki Kaifu</a>. L'échec des négociations en vue d'un accord
+    électoral pour les <a
+            href="http://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_japonaises_de_2000" title="Élections législatives japonaises de 2000">élections législatives</a> de <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a> et le changement de direction au <a
+            href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)"
+            title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>
+    (entré dans le coma le <span class="date-lien nowrap datasortkey" data-sort-value="2000-04-01"><a href="http://fr.wikipedia.org/wiki/1er_avril" title="1er avril"><abbr class="abbr" title="premier">1<sup>er</sup></abbr></a> <a href="http://fr.wikipedia.org/wiki/Avril_2000" title="Avril 2000">avril</a> <a
+            href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a></span>,
+    <a href="http://fr.wikipedia.org/wiki/Keiz%C5%8D_Obuchi" title="Keizō Obuchi">Keizō Obuchi</a> est remplacé par <a href="http://fr.wikipedia.org/wiki/Yoshir%C5%8D_Mori" title="Yoshirō Mori">Yoshirō Mori</a>, avec lequel Ozawa s'entend moins, dès le <a href="http://fr.wikipedia.org/wiki/5_avril"
+                                                                                                                                                                                                                                                                title="5 avril">5 avril</a>) poussent <a
+            href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> à quitter la coalition gouvernementale et à retourner dans l'opposition au début du mois d'<a href="http://fr.wikipedia.org/wiki/Avril" title="Avril">avril</a> <a
+            href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a><sup id="cite_ref-5"
+                                                                               class="reference"><a
+            href="#cite_note-5"><span class="cite_crochet">[</span>5<span class="cite_crochet">]</span></a></sup>. Il en résulte une scission au sein du Parti libéral entre&nbsp;:</p>
+<ul>
+    <li>les fidèles d'Ozawa (19 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a> sur 40 et 6 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)" title="Chambre des conseillers (Japon)">conseillers</a>
+        sur 12) qui restent au Parti
+        libéral et entrent dans l'opposition,
+    </li>
+    <li>les partisans d'un maintien dans la majorité (21 puis 18 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, suite à la défection de trois d'entre eux qui adhèrent directement au <a
+            href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> et 6 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_du_Japon" title="Chambre des conseillers du Japon" class="mw-redirect">conseillers</a>),
+        emmenés par l'ancien
+        secrétaire général du parti et ancien ministre <a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new" title="Takeshi Noda (page inexistante)">Takeshi Noda</a>, qui fondent un nouveau mouvement, le <a
+                href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
+                title="Nouveau Parti conservateur">Parti conservateur</a>
+        (rebaptisé en <a href="http://fr.wikipedia.org/wiki/2002" title="2002">2002</a> <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Nouveau Parti conservateur</a> avant de fusionner en <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>
+        avec le <a
+                href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>).
+    </li>
+</ul>
+<p>Après l'arrivée au pouvoir du populaire <a href="http://fr.wikipedia.org/wiki/Jun%27ichir%C5%8D_Koizumi" title="Jun'ichirō Koizumi">Jun'ichirō Koizumi</a>, qui chasse sur le terrain électoral du Parti libéral (il met alors en place de nombreuses réformes libérales de déréglementation, de
+    dérégulation et de
+    décentralisation), <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> se rapproche du <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a> dans le but d'unifier les forces de l'opposition, et
+    concentre désormais ses attaques contre le
+    gouvernement sur le plan constitutionnel et diplomatique (Ozawa s'opposant notamment à la participation des <a href="http://fr.wikipedia.org/wiki/Forces_japonaises_d%27autod%C3%A9fense" title="Forces japonaises d'autodéfense">forces d'autodéfense</a> à la coalition en <a
+            href="http://fr.wikipedia.org/wiki/Guerre_d%27Irak"
+            title="Guerre d'Irak">Irak</a> puisque
+    celle-ci n'a pas reçu l'aval de l'<a href="http://fr.wikipedia.org/wiki/Organisation_des_Nations_unies" title="Organisation des Nations unies">ONU</a>). Une première tentative de fusion des libéraux dans le <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon"
+                                                                                                                                                                                                                      title="Parti démocrate du Japon">PDJ</a> a lieu à la fin de
+    l'année <a href="http://fr.wikipedia.org/wiki/2002" title="2002">2002</a> mais, Ozawa restant alors impopulaire auprès d'une bonne partie des membres de ce mouvement <a href="http://fr.wikipedia.org/wiki/Centrisme" title="Centrisme">centriste</a> voire de <a
+            href="http://fr.wikipedia.org/wiki/Centre-gauche" title="Centre-gauche" class="mw-redirect">centre-gauche</a>,
+    c'est un échec<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite_crochet">[</span>6<span class="cite_crochet">]</span></a></sup> et le chef démocrate <a href="http://fr.wikipedia.org/wiki/Yukio_Hatoyama" title="Yukio Hatoyama">Yukio Hatoyama</a> doit démissionner le <span
+            class="date-lien nowrap datasortkey" data-sort-value="2002-12-03"><a href="http://fr.wikipedia.org/wiki/3_d%C3%A9cembre" title="3 décembre">3</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_2002" title="Décembre 2002">décembre</a> <a href="http://fr.wikipedia.org/wiki/2002"
+                                                                                                                                                                                                                                                              title="2002">2002</a></span><sup
+            id="cite_ref-7" class="reference"><a
+            href="#cite_note-7"><span class="cite_crochet">[</span>7<span class="cite_crochet">]</span></a></sup>. Son successeur, le plus charismatique <a href="http://fr.wikipedia.org/wiki/Naoto_Kan" title="Naoto Kan">Naoto Kan</a>, engage toutefois de nouvelles négociations, de manière plus
+    progressives. Le mariage
+    se concrétise finalement en plusieurs étapes au mois de <a href="http://fr.wikipedia.org/wiki/Septembre" title="Septembre">septembre</a> <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: le <a href="http://fr.wikipedia.org/wiki/19_septembre" title="19 septembre">19</a> il
+    est approuvé par les parlementaires du <a
+            href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a>, le <a href="http://fr.wikipedia.org/wiki/24_septembre" title="24 septembre">24</a> l'accord de fusion est signé, le lendemain le Parti libéral décide sa dissolution pour
+    disparaître officiellement le <a
+            href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> et ses parlementaires rejoignent les groupes démocrates des deux chambres de la <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Diète</a> (qui comprennent désormais
+    respectivement 138 <a
+            href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, dont un indépendant non membre du parti, et 67 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)"
+                                                                                                                                                                                                        title="Chambre des conseillers (Japon)">conseillers</a>, dont 3 non
+    militants du mouvement auxquels il faut toutefois ajouter le vice-président de la Chambre qui par tradition siège comme non-inscrit) et le congrès de fusion a lieu enfin le <a href="http://fr.wikipedia.org/wiki/5_octobre" title="5 octobre">5 octobre</a>. Au sein du <a
+            href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon"
+            title="Parti démocrate du Japon">PDJ</a>, la
+    plupart des anciens membres du Parti libéral forment la faction interne baptisée «&nbsp;Comité du Renouveau&nbsp;» <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">一新会</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Isshinkai</i></span></i><span
+            class="t_nihongo_help"><span class="t_nihongo_icon" style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span>, l'une des plus importantes du mouvement
+    d'opposition à tel
+    point qu'<a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> en obtiendra la présidence de <a href="http://fr.wikipedia.org/wiki/2006" title="2006">2006</a> à <a href="http://fr.wikipedia.org/wiki/2009" title="2009">2009</a>.</p>
+
+<h2><span class="mw-headline" id="R.C3.A9sultats_.C3.A9lectoraux">Résultats électoraux</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=2"
+                                                                                                                                                                          title="Modifier la section : Résultats électoraux" class="mw-editsection-visualeditor">modifier</a><span
+        class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=2" title="Modifier la section : Résultats électoraux">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li><a href="http://fr.wikipedia.org/w/index.php?title=%C3%89lections_%C3%A0_la_chambre_des_conseillers_du_Japon_de_1998&amp;action=edit&amp;redlink=1" class="new" title="Élections à la chambre des conseillers du Japon de 1998 (page inexistante)">Élections à la chambre des conseillers</a>
+        du <span
+                class="date-lien nowrap datasortkey" data-sort-value="1998-07-12"><a href="http://fr.wikipedia.org/wiki/12_juillet" title="12 juillet">12</a> <a href="http://fr.wikipedia.org/wiki/Juillet_1998" title="Juillet 1998">juillet</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span>&nbsp;:
+        12 sortants dont 6 ne remettant pas en jeu
+        leur siège. 6 élus&nbsp;:
         <ul>
-            <li class="toclevel-1 tocsection-1"><a href="#Id.C3.A9ologie_et_positionnements"><span class="tocnumber">1</span> <span class="toctext">Idéologie et positionnements</span></a></li>
-            <li class="toclevel-1 tocsection-2"><a href="#R.C3.A9sultats_.C3.A9lectoraux"><span class="tocnumber">2</span> <span class="toctext">Résultats électoraux</span></a></li>
-            <li class="toclevel-1 tocsection-3"><a href="#Direction"><span class="tocnumber">3</span> <span class="toctext">Direction</span></a></li>
-            <li class="toclevel-1 tocsection-4"><a href="#R.C3.A9f.C3.A9rences"><span class="tocnumber">4</span> <span class="toctext">Références</span></a></li>
-            <li class="toclevel-1 tocsection-5"><a href="#Articles_connexes"><span class="tocnumber">5</span> <span class="toctext">Articles connexes</span></a></li>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_majoritaire_plurinominal" title="Scrutin majoritaire plurinominal">scrutin majoritaire plurinominal</a> au niveau des <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fectures_du_Japon" title="Préfectures du Japon">préfectures</a>&nbsp;: 980
+                249 voix (1,75&nbsp;% des suffrages,
+                6<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 1 élu dans la <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Wakayama" title="Préfecture de Wakayama">préfecture de Wakayama</a>,
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> national&nbsp;: 5 207 813 voix (9,28&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>)
+                et 5 élus.
+            </li>
         </ul>
+    </li>
+    <li><a href="http://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_japonaises_de_2000" title="Élections législatives japonaises de 2000">Élections législatives</a> du <span class="date-lien nowrap datasortkey" data-sort-value="2000-06-25"><a href="http://fr.wikipedia.org/wiki/25_juin"
+                                                                                                                                                                                                                                                              title="25 juin">25</a> <a
+            href="http://fr.wikipedia.org/wiki/Juin_2000" title="Juin 2000">juin</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a></span>&nbsp;: 19 sortants (8 titulaires de circonscription et 11 élus en <a href="http://fr.wikipedia.org/wiki/1996" title="1996">1996</a> à la
+        proportionnelle). 22 élus (+3) dont 11 sortants, 4 anciens députés
+        réélus à cette occasion et 7 nouveaux arrivants&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_uninominal_majoritaire_%C3%A0_un_tour" title="Scrutin uninominal majoritaire à un tour">scrutin uninominal majoritaire</a> au niveau des districts électoraux&nbsp;: 2 053 736 voix (3,38&nbsp;% des suffrages, 5<sup>e</sup> score du <a
+                    href="http://fr.wikipedia.org/wiki/Japon"
+                    title="Japon">Japon</a>),
+                4 élus dont 3 sortants (dans les 1<sup>er</sup> et 4<sup>e</sup> districts d'<a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">Iwate</a> et le 14<sup>e</sup> de <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Kanagawa"
+                                                                                                                                                                                                                              title="Préfecture de Kanagawa">Kanagawa</a>) et 1
+                nouveau député (dans le 3<sup>e</sup> district d'<a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">Iwate</a>). Le parti contrôle 3 des 4 circonscriptions de la <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate"
+                                                                                                                                                                                                                             title="Préfecture d'Iwate">préfecture d'Iwate</a>, le fief
+                électoral d'<a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> (il y est lui-même député du 4<sup>e</sup> district), et y réalise un total de 40&nbsp;% des suffrages,
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> au niveau des blocs régionaux&nbsp;: 6 589 490 voix (11,01&nbsp;% des suffrages, 5<sup>e</sup> score du <a
+                    href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>), 18 élus
+                dont 8 sortants (parmi lesquels 3 élus dans des circonscriptions en <a href="http://fr.wikipedia.org/wiki/1996" title="1996">1996</a>), 4 anciens députés retrouvant leurs sièges à cette occasion et 6 nouveaux arrivants.
+            </li>
+        </ul>
+    </li>
+    <li><a href="http://fr.wikipedia.org/w/index.php?title=%C3%89lections_%C3%A0_la_chambre_des_conseillers_du_Japon_de_2001&amp;action=edit&amp;redlink=1" class="new" title="Élections à la chambre des conseillers du Japon de 2001 (page inexistante)">Élections à la chambre des conseillers</a>
+        du <span
+                class="date-lien nowrap datasortkey" data-sort-value="2001-07-29"><a href="http://fr.wikipedia.org/wiki/29_juillet" title="29 juillet">29</a> <a href="http://fr.wikipedia.org/wiki/Juillet_2001" title="Juillet 2001">juillet</a> <a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a></span>&nbsp;:
+        6 sortants dont 2 ne remettant pas en jeu leur
+        siège. 6 élus&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_majoritaire_plurinominal" title="Scrutin majoritaire plurinominal">scrutin majoritaire plurinominal</a> au niveau des <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fectures_du_Japon" title="Préfectures du Japon">préfectures</a>&nbsp;: 3
+                011 787 voix (5,54&nbsp;% des suffrages,
+                5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 2 élus dans les <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">préfectures d'Iwate</a> et de <a
+                        href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Niigata" title="Préfecture de Niigata">Niigate</a>,
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> national&nbsp;: 4 227 148 voix (7,72&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>)
+                et 4 élus.
+            </li>
+        </ul>
+    </li>
+</ul>
+<h2><span class="mw-headline" id="Direction">Direction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=3" title="Modifier la section : Direction"
+                                                                                                                                          class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a
+        href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=3" title="Modifier la section : Direction">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li>Président&nbsp;: <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></li>
+    <li>Liste des secrétaires généraux&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Takeshi Noda (page inexistante)">Takeshi Noda</a> (entrée au gouvernement, plus tard départ pour
+                le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
+        </ul>
+    </li>
+    <li>Liste des présidents du Conseil de Recherche politique&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
+        </ul>
+    </li>
+    <li>Liste des présidents du Comité des Affaires de la <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Diète</a>&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Toshihiro_Nikai" title="Toshihiro Nikai">Toshihiro Nikai</a> (plus tard départ pour le <a
+                    href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti
+                conservateur</a>)
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Keisuke_Nakanishi&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Keisuke Nakanishi (page inexistante)">Keisuke Nakanishi</a> (départ pour le <a
+                    href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
+            <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Kenji_Yamaoka&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Kenji Yamaoka (page inexistante)">Kenji Yamaoka</a></li>
+        </ul>
+    </li>
+    <li>Liste des présidents du Groupe à la <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)" title="Chambre des conseillers (Japon)">Chambre des conseillers</a>&nbsp;:
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takushi_Hirai&amp;action=edit&amp;redlink=1" class="new" title="Takushi Hirai (page inexistante)">Takushi Hirai</a> (plus tard départ pour le <a
+                    href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
+                    title="Nouveau Parti conservateur">Parti conservateur</a>)
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Chikage_%C5%8Cgi&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Chikage Ōgi (page inexistante)">Chikage Ōgi</a> (départ pour le <a
+                    href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
+            </li>
+            <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>-<a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Hideaki_Tamura&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Hideaki Tamura (page inexistante)">Hideaki Tamura</a></li>
+            <li><a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takeo_Nishioka&amp;action=edit&amp;redlink=1" class="new"
+                                                                                                                                                              title="Takeo Nishioka (page inexistante)">Takeo Nishioka</a></li>
+        </ul>
+    </li>
+    <li>Conseiller suprême (fonction honorifique, <a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>)&nbsp;: <a href="http://fr.wikipedia.org/wiki/Toshiki_Kaifu" title="Toshiki Kaifu">Toshiki Kaifu</a> (départ pour le
+        <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
+           title="Nouveau Parti conservateur">Parti conservateur</a>)
+    </li>
+</ul>
+<h2><span class="mw-headline" id="R.C3.A9f.C3.A9rences">Références</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=4"
+                                                                                                                                                      title="Modifier la section : Références"
+                                                                                                                                                      class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a
+        href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=4" title="Modifier la section : Références">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+
+<div class="references-small decimal" style="column-count: 1;">
+    <div style="font-size: 85%">
+        <ol class="references">
+            <li id="cite_note-1"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">OZAWA, I., <i>日本 改造 計画</i>, éd. <i>Kodansha</i>, <a href="http://fr.wikipedia.org/wiki/1993" title="1993">1993</a>, réédité à plusieurs reprises, 258 p. (ISBN&nbsp;: 4062064820)</span>
+            </li>
+            <li id="cite_note-2"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                    href="http://books.google.fr/books?id=Gw20DhcK9n8C&amp;pg=PA161&amp;lpg=PA161&amp;dq=Liberal+Party+Ozawa+constitution&amp;source=bl&amp;ots=dqeAKdMPlL&amp;sig=Ca2n6_7m37wmZ1CibvlmGbDunjc&amp;hl=fr&amp;ei=gqIvSoibK9m6jAeS_aSMCw&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=4#PPA164,M1">I.
+                OZAWA, trad. du japonais par J. PARTON «&nbsp;<i>A proposal for reforming the Japanese constitution (1999)</i>&nbsp;», <i>in</i> G. D. HOOK, G. McCORMACK, <i>Japan's contested Constitution&nbsp;: documents and analysis</i>, éd. Routledge, 2001, p. 161-176</a><small
+                    class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://books.google.fr/books?id=Gw20DhcK9n8C%26pg=PA161%26lpg=PA161%26dq=Liberal+Party+Ozawa+constitution%26source=bl%26ots=dqeAKdMPlL%26sig=Ca2n6_7m37wmZ1CibvlmGbDunjc%26hl=fr%26ei=gqIvSoibK9m6jAeS_aSMCw%26sa=X%26oi=book_result%26ct=result%26resnum=4#PPA164,M1&amp;title=I.%20OZAWA%2C%20trad.%20du%20japonais%20par%20J.%20PARTON%20%C2%AB%C2%A0A%20proposal%20for%20reforming%20the%20Japanese%20constitution%20(1999)%C2%A0%C2%BB%2C%20in%20G.%20D.%20HOOK%2C%20G.%20McCORMACK%2C%20Japan's%20contested%20Constitution%C2%A0%3A%20documents%20and%20analysis%2C%20%C3%A9d.%20Routledge%2C%202001%2C%20p.%20161-176"
+                    title="archive de I. OZAWA, trad. du japonais par J. PARTON «&nbsp;A proposal for reforming the Japanese constitution (1999)&nbsp;», in G. D. HOOK, G. McCORMACK, Japan's contested Constitution&nbsp;: documents and analysis, éd. Routledge, 2001, p. 161-176">archive</a>]
+            </small></span></li>
+            <li id="cite_note-3"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                                    href="http://www.liberal-international.org/contentFiles/files/Hatoyama%20Speech.pdf">Discours
+                de Yukio Hatoyama devant le congrès de l'Internationale libérale</a><small class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://www.liberal-international.org/contentFiles/files/Hatoyama%2520Speech.pdf&amp;title=Discours%20de%20Yukio%20Hatoyama%20devant%20le%20congr%C3%A8s%20de%20l'Internationale%20lib%C3%A9rale"
+                    title="archive de Discours de Yukio Hatoyama devant le congrès de l'Internationale libérale">archive</a>]
+            </small></span></li>
+            <li id="cite_note-4"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                    href="http://www.nytimes.com/1998/11/20/world/japan-s-ruling-party-agrees-to-coalition-with-archrival.html">S.
+                STROM, «&nbsp;<i>Japan's Ruling Party Agrees To Coalition With Archrival</i>&nbsp;», <i>The New York Times</i>, 20/11/1998</a><small class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://www.nytimes.com/1998/11/20/world/japan-s-ruling-party-agrees-to-coalition-with-archrival.html&amp;title=S.%20STROM%2C%20%C2%AB%C2%A0Japan's%20Ruling%20Party%20Agrees%20To%20Coalition%20With%20Archrival%C2%A0%C2%BB%2C%20The%20New%20York%20Times%2C%2020%2F11%2F1998"
+                    title="archive de S. STROM, «&nbsp;Japan's Ruling Party Agrees To Coalition With Archrival&nbsp;», The New York Times, 20/11/1998">archive</a>]
+            </small></span></li>
+            <li id="cite_note-5"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                    href="http://findarticles.com/p/articles/mi_m0XPQ/is_2000_April_3/ai_61635355/"><i>Kyodo
+                News International', «&nbsp;</i>2ND LD: Ozawa's LP to quit ruling bloc, party split likely<i>&nbsp;»,</i> BNET<i>, 03/04/2000</i></a><small class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://findarticles.com/p/articles/mi_m0XPQ/is_2000_April_3/ai_61635355/&amp;title=Kyodo%20News%20International'%2C%20%C2%AB%C2%A02ND%20LD%3A%20Ozawa's%20LP%20to%20quit%20ruling%20bloc%2C%20party%20split%20likely%C2%A0%C2%BB%2C%20BNET%2C%2003%2F04%2F2000"
+                    title="archive de Kyodo News International', «&nbsp;2ND LD: Ozawa's LP to quit ruling bloc, party split likely&nbsp;», BNET, 03/04/2000">archive</a>]
+            </small></span></li>
+            <li id="cite_note-6"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                    href="http://search.japantimes.co.jp/cgi-bin/nn20021130a2.html">«&nbsp;<i>Hatoyama
+                considering resignation</i>&nbsp;», <i>Japan Times</i>, 30/11/2002</a><small class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://search.japantimes.co.jp/cgi-bin/nn20021130a2.html&amp;title=%C2%AB%C2%A0Hatoyama%20considering%20resignation%C2%A0%C2%BB%2C%20Japan%20Times%2C%2030%2F11%2F2002"
+                    title="archive de «&nbsp;Hatoyama considering resignation&nbsp;», Japan Times, 30/11/2002">archive</a>]
+            </small></span></li>
+            <li id="cite_note-7"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
+                                                                                                                                                                                                                                                    href="http://www.voanews.com/english/archive/2002-12/a-2002-12-03-7-Leader.cfm?moddate=2002-12-03">«&nbsp;<i>Leader
+                of Japan's Opposition Party to Resign</i>&nbsp;», <i>News VOA</i>, 03/12/2002</a><small class="cachelinks">&nbsp;[<a
+                    href="http://archive.wikiwix.com/cache/?url=http://www.voanews.com/english/archive/2002-12/a-2002-12-03-7-Leader.cfm?moddate=2002-12-03&amp;title=%C2%AB%C2%A0Leader%20of%20Japan's%20Opposition%20Party%20to%20Resign%C2%A0%C2%BB%2C%20News%20VOA%2C%2003%2F12%2F2002"
+                    title="archive de «&nbsp;Leader of Japan's Opposition Party to Resign&nbsp;», News VOA, 03/12/2002">archive</a>]
+            </small></span></li>
+        </ol>
     </div>
-    <p></p>
-
-    <h2><span class="mw-headline" id="Id.C3.A9ologie_et_positionnements">Idéologie et positionnements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=1"
-                                                                                                                                                                                         title="Modifier la section : Idéologie et positionnements" class="mw-editsection-visualeditor">modifier</a><span
-            class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=1" title="Modifier la section : Idéologie et positionnements">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
-
-    <p>Il est créé par 54 <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Parlementaires</a> (42 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a> et 12 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_du_Japon"
-                                                                                                                                                                                                                                          title="Chambre des conseillers du Japon" class="mw-redirect">conseillers</a>,
-        à quoi s'ajoutent rapidement deux députés supplémentaires au cours de l'année <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Tatsuo_Sasayama&amp;action=edit&amp;redlink=1" class="new" title="Tatsuo Sasayama (page inexistante)">Tatsuo Sasayama</a> et <a
-                href="http://fr.wikipedia.org/w/index.php?title=Yoshihito_Iwasa&amp;action=edit&amp;redlink=1" class="new" title="Yoshihito Iwasa (page inexistante)">Yoshihito Iwasa</a>) issus de l'ancien <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>, parti de <a href="http://fr.wikipedia.org/wiki/Centre-droit"
-                                                                                                                                                                                                                                                                            title="Centre-droit"
-                                                                                                                                                                                                                                                                            class="mw-redirect">centre-droit</a>
-        qui a constitué la principale force d'opposition au <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> de sa création le <span class="date-lien nowrap datasortkey" data-sort-value="1994-12-10"><a
-                href="http://fr.wikipedia.org/wiki/10_d%C3%A9cembre" title="10 décembre">10</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_1994" title="Décembre 1994">décembre</a> <a href="http://fr.wikipedia.org/wiki/1994" title="1994">1994</a></span> à sa dissolution le <span class="date-lien nowrap datasortkey" data-sort-value="1997-12-27"><a
-                href="http://fr.wikipedia.org/wiki/27_d%C3%A9cembre" title="27 décembre">27</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_1997" title="Décembre 1997">décembre</a> <a href="http://fr.wikipedia.org/wiki/1997" title="1997">1997</a></span>. Emmené par <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a>, ancien président du
-        <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>, et essentiellement constitué de dissidents du <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>, il défend une plateforme <a
-                href="http://fr.wikipedia.org/wiki/Lib%C3%A9ralisme" title="Libéralisme">libérale</a>, comme son nom l'indique, et fortement inspirée de la <a href="http://fr.wikipedia.org/wiki/R%C3%A9volution_conservatrice_(sens_moderne)" title="Révolution conservatrice (sens moderne)">révolution conservatrice</a> <a
-                href="http://fr.wikipedia.org/wiki/Monde_anglo-saxon" title="Monde anglo-saxon">anglo-saxonne</a> des <a href="http://fr.wikipedia.org/wiki/Ann%C3%A9es_1980" title="Années 1980">années 1980</a> (réduction du poids de l'État et de l'administration centrale par la déconcentration et la décentralisation, dérégulation des marchés
-        financiers). L'essentiel de sa doctrine politique reprend les idées développées par <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> en <a href="http://fr.wikipedia.org/wiki/1993" title="1993">1993</a> dans le livre <i>Plan pour réformer le Japon</i> <span style="font-weight: normal">(<span
-                class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">日本 改造 計画</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Nihon Kaizō Keikaku</i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
-                                                                                                                                                                                                                                  style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
-                href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span><sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite_crochet">[</span>1<span class="cite_crochet">]</span></a></sup> et est résumée dans le slogan du parti&nbsp;: «&nbsp;Restauration
-        du Japon&nbsp;» <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">日本一新</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Nihon isshin</i></span></i><span class="t_nihongo_help"><span class="t_nihongo_icon"
-                                                                                                                                                                                                                                                                        style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a
-                href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span>.</p>
-
-    <p>Il milite également pour une réforme de la <a href="http://fr.wikipedia.org/wiki/Constitution_du_Japon" title="Constitution du Japon">Constitution du Japon</a> afin de la rendre plus adaptée aux valeurs japonaises et, tout en ne remettant pas en cause ses principes fondamentaux (pacifisme, respect des droits de
-        l'Homme, souveraineté du peuple et coopération internationale), il appelle à la reconnaissance des <a href="http://fr.wikipedia.org/wiki/Forces_japonaises_d%27autod%C3%A9fense" title="Forces japonaises d'autodéfense">Forces d'autodéfense</a> comme une armée à part entière ayant le droit de combattre dans le cadre
-        exclusif toutefois de la <a href="http://fr.wikipedia.org/wiki/Force_de_maintien_de_la_paix_des_Nations_unies" title="Force de maintien de la paix des Nations unies">Force de maintien de la paix</a> de l'<a href="http://fr.wikipedia.org/wiki/Organisation_des_Nations_unies" title="Organisation des Nations unies">ONU</a>. Il veut aussi
-        limiter le pouvoir législatif essentiellement à une seule chambre élue, la <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">Chambre des représentants</a>, tandis que la <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)"
-                                                                                                                                                                                                                                      title="Chambre des conseillers (Japon)">Chambre des conseillers</a>
-        deviendrait une sorte de «&nbsp;Chambre des Lords sans pouvoir&nbsp;» sur le modèle britannique dont les membres seraient nommés à vie par l'<a href="http://fr.wikipedia.org/wiki/Empereur_du_Japon" title="Empereur du Japon">empereur du Japon</a> après avoir été désignés par les <a
-                href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">Représentants</a> pour s'être distingués au service de l'État ou du peuple, sans que cette fonction soit héréditaire<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span
-                class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup>.</p>
-
-    <p>Sur le plan international, il fait partie de l'<a href="http://fr.wikipedia.org/wiki/Internationale_lib%C3%A9rale" title="Internationale libérale">Internationale libérale</a><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite_crochet">[</span>3<span
-            class="cite_crochet">]</span></a></sup>.</p>
-
-    <p>Après plusieurs mois d'hésitations, le Parti libéral forme le <span class="date-lien nowrap datasortkey" data-sort-value="1998-11-19"><a href="http://fr.wikipedia.org/wiki/19_novembre" title="19 novembre">19</a> <a href="http://fr.wikipedia.org/wiki/Novembre_1998" title="Novembre 1998">novembre</a> <a href="http://fr.wikipedia.org/wiki/1998"
-                                                                                                                                                                                                                                                                        title="1998">1998</a></span> une
-        coalition avec son ancien rival, le <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> de <a href="http://fr.wikipedia.org/wiki/Keiz%C5%8D_Obuchi" title="Keizō Obuchi">Keizō Obuchi</a><sup id="cite_ref-4" class="reference"><a
-                href="#cite_note-4"><span class="cite_crochet">[</span>4<span class="cite_crochet">]</span></a></sup> et obtient un membre au sein du <a href="http://fr.wikipedia.org/wiki/Cabinet_du_Japon" title="Cabinet du Japon">Cabinet</a> entre <a href="http://fr.wikipedia.org/wiki/Janvier" title="Janvier">janvier</a> <a href="http://fr.wikipedia.org/wiki/1999"
-                                                                                                                                                                                                                                                                                         title="1999">1999</a>
-        et <a href="http://fr.wikipedia.org/wiki/Avril" title="Avril">avril</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a> (<a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new" title="Takeshi Noda (page inexistante)">Takeshi Noda</a> puis <a href="http://fr.wikipedia.org/wiki/Toshihiro_Nikai"
-                                                                                                                                                                                                                                                          title="Toshihiro Nikai">Toshihiro Nikai</a>).
-        Cette alliance entraîne la dissidence de six <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, cinq rejoignant le <a href="http://fr.wikipedia.org/wiki/Nouveau_K%C5%8Dmeit%C5%8D" title="Nouveau Kōmeitō">Nouveau Kōmeitō</a> et le sixième le <a
-                href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a>, nouveau grand parti d'opposition, mais apporte au Parti libéral le ralliement de deux députés dont l'ancien <a href="http://fr.wikipedia.org/wiki/Premier_ministre_du_Japon" title="Premier ministre du Japon">Premier
-            ministre</a> et prédécesseur d'Ozawa à la tête du défunt <i><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></i>, <a href="http://fr.wikipedia.org/wiki/Toshiki_Kaifu" title="Toshiki Kaifu">Toshiki Kaifu</a>. L'échec des négociations en vue d'un accord électoral pour les <a
-                href="http://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_japonaises_de_2000" title="Élections législatives japonaises de 2000">élections législatives</a> de <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a> et le changement de direction au <a href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)"
-                                                                                                                                                                                                                                                title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>
-        (entré dans le coma le <span class="date-lien nowrap datasortkey" data-sort-value="2000-04-01"><a href="http://fr.wikipedia.org/wiki/1er_avril" title="1er avril"><abbr class="abbr" title="premier">1<sup>er</sup></abbr></a> <a href="http://fr.wikipedia.org/wiki/Avril_2000" title="Avril 2000">avril</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a></span>,
-        <a href="http://fr.wikipedia.org/wiki/Keiz%C5%8D_Obuchi" title="Keizō Obuchi">Keizō Obuchi</a> est remplacé par <a href="http://fr.wikipedia.org/wiki/Yoshir%C5%8D_Mori" title="Yoshirō Mori">Yoshirō Mori</a>, avec lequel Ozawa s'entend moins, dès le <a href="http://fr.wikipedia.org/wiki/5_avril" title="5 avril">5 avril</a>) poussent <a
-                href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> à quitter la coalition gouvernementale et à retourner dans l'opposition au début du mois d'<a href="http://fr.wikipedia.org/wiki/Avril" title="Avril">avril</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a><sup id="cite_ref-5"
-                                                                                                                                                                                                                                                                             class="reference"><a
-                href="#cite_note-5"><span class="cite_crochet">[</span>5<span class="cite_crochet">]</span></a></sup>. Il en résulte une scission au sein du Parti libéral entre&nbsp;:</p>
-    <ul>
-        <li>les fidèles d'Ozawa (19 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a> sur 40 et 6 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)" title="Chambre des conseillers (Japon)">conseillers</a> sur 12) qui restent au Parti
-            libéral et entrent dans l'opposition,
-        </li>
-        <li>les partisans d'un maintien dans la majorité (21 puis 18 <a href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, suite à la défection de trois d'entre eux qui adhèrent directement au <a
-                href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a> et 6 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_du_Japon" title="Chambre des conseillers du Japon" class="mw-redirect">conseillers</a>), emmenés par l'ancien
-            secrétaire général du parti et ancien ministre <a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new" title="Takeshi Noda (page inexistante)">Takeshi Noda</a>, qui fondent un nouveau mouvement, le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
-                                                                                                                                                                                                                                                 title="Nouveau Parti conservateur">Parti conservateur</a>
-            (rebaptisé en <a href="http://fr.wikipedia.org/wiki/2002" title="2002">2002</a> <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Nouveau Parti conservateur</a> avant de fusionner en <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a> avec le <a
-                    href="http://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_d%C3%A9mocrate_(Japon)" title="Parti libéral démocrate (Japon)" class="mw-redirect">PLD</a>).
-        </li>
-    </ul>
-    <p>Après l'arrivée au pouvoir du populaire <a href="http://fr.wikipedia.org/wiki/Jun%27ichir%C5%8D_Koizumi" title="Jun'ichirō Koizumi">Jun'ichirō Koizumi</a>, qui chasse sur le terrain électoral du Parti libéral (il met alors en place de nombreuses réformes libérales de déréglementation, de dérégulation et de
-        décentralisation), <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> se rapproche du <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a> dans le but d'unifier les forces de l'opposition, et concentre désormais ses attaques contre le
-        gouvernement sur le plan constitutionnel et diplomatique (Ozawa s'opposant notamment à la participation des <a href="http://fr.wikipedia.org/wiki/Forces_japonaises_d%27autod%C3%A9fense" title="Forces japonaises d'autodéfense">forces d'autodéfense</a> à la coalition en <a href="http://fr.wikipedia.org/wiki/Guerre_d%27Irak"
-                                                                                                                                                                                                                                                                 title="Guerre d'Irak">Irak</a> puisque
-        celle-ci n'a pas reçu l'aval de l'<a href="http://fr.wikipedia.org/wiki/Organisation_des_Nations_unies" title="Organisation des Nations unies">ONU</a>). Une première tentative de fusion des libéraux dans le <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a> a lieu à la fin de
-        l'année <a href="http://fr.wikipedia.org/wiki/2002" title="2002">2002</a> mais, Ozawa restant alors impopulaire auprès d'une bonne partie des membres de ce mouvement <a href="http://fr.wikipedia.org/wiki/Centrisme" title="Centrisme">centriste</a> voire de <a href="http://fr.wikipedia.org/wiki/Centre-gauche" title="Centre-gauche" class="mw-redirect">centre-gauche</a>,
-        c'est un échec<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite_crochet">[</span>6<span class="cite_crochet">]</span></a></sup> et le chef démocrate <a href="http://fr.wikipedia.org/wiki/Yukio_Hatoyama" title="Yukio Hatoyama">Yukio Hatoyama</a> doit démissionner le <span
-                class="date-lien nowrap datasortkey" data-sort-value="2002-12-03"><a href="http://fr.wikipedia.org/wiki/3_d%C3%A9cembre" title="3 décembre">3</a> <a href="http://fr.wikipedia.org/wiki/D%C3%A9cembre_2002" title="Décembre 2002">décembre</a> <a href="http://fr.wikipedia.org/wiki/2002" title="2002">2002</a></span><sup id="cite_ref-7" class="reference"><a
-                href="#cite_note-7"><span class="cite_crochet">[</span>7<span class="cite_crochet">]</span></a></sup>. Son successeur, le plus charismatique <a href="http://fr.wikipedia.org/wiki/Naoto_Kan" title="Naoto Kan">Naoto Kan</a>, engage toutefois de nouvelles négociations, de manière plus progressives. Le mariage
-        se concrétise finalement en plusieurs étapes au mois de <a href="http://fr.wikipedia.org/wiki/Septembre" title="Septembre">septembre</a> <a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: le <a href="http://fr.wikipedia.org/wiki/19_septembre" title="19 septembre">19</a> il est approuvé par les parlementaires du <a
-                href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">PDJ</a>, le <a href="http://fr.wikipedia.org/wiki/24_septembre" title="24 septembre">24</a> l'accord de fusion est signé, le lendemain le Parti libéral décide sa dissolution pour disparaître officiellement le <a
-                href="http://fr.wikipedia.org/wiki/26_septembre" title="26 septembre">26</a> et ses parlementaires rejoignent les groupes démocrates des deux chambres de la <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Diète</a> (qui comprennent désormais respectivement 138 <a
-                href="http://fr.wikipedia.org/wiki/Chambre_des_repr%C3%A9sentants_du_Japon" title="Chambre des représentants du Japon">représentants</a>, dont un indépendant non membre du parti, et 67 <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)" title="Chambre des conseillers (Japon)">conseillers</a>, dont 3 non
-        militants du mouvement auxquels il faut toutefois ajouter le vice-président de la Chambre qui par tradition siège comme non-inscrit) et le congrès de fusion a lieu enfin le <a href="http://fr.wikipedia.org/wiki/5_octobre" title="5 octobre">5 octobre</a>. Au sein du <a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon"
-                                                                                                                                                                                                                                                              title="Parti démocrate du Japon">PDJ</a>, la
-        plupart des anciens membres du Parti libéral forment la faction interne baptisée «&nbsp;Comité du Renouveau&nbsp;» <span style="font-weight: normal">(<span class="lang-ja" lang="ja" title="Japonais" xml:lang="ja">一新会</span>, <i><span class="t_nihongo_romaji" title="Transcription Hepburn"><i>Isshinkai</i></span></i><span
-                class="t_nihongo_help"><span class="t_nihongo_icon" style="color:#00e;font:bold 80% sans-serif;text-decoration:none;padding:0 .1em;"><sup><a href="http://fr.wikipedia.org/wiki/Aide:Japonais" title="Aide:Japonais">?</a></sup></span></span>)</span>, l'une des plus importantes du mouvement d'opposition à tel
-        point qu'<a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> en obtiendra la présidence de <a href="http://fr.wikipedia.org/wiki/2006" title="2006">2006</a> à <a href="http://fr.wikipedia.org/wiki/2009" title="2009">2009</a>.</p>
-
-    <h2><span class="mw-headline" id="R.C3.A9sultats_.C3.A9lectoraux">Résultats électoraux</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=2"
-                                                                                                                                                                              title="Modifier la section : Résultats électoraux" class="mw-editsection-visualeditor">modifier</a><span
-            class="mw-editsection-divider"> | </span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=2" title="Modifier la section : Résultats électoraux">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
-    <ul>
-        <li><a href="http://fr.wikipedia.org/w/index.php?title=%C3%89lections_%C3%A0_la_chambre_des_conseillers_du_Japon_de_1998&amp;action=edit&amp;redlink=1" class="new" title="Élections à la chambre des conseillers du Japon de 1998 (page inexistante)">Élections à la chambre des conseillers</a> du <span
-                class="date-lien nowrap datasortkey" data-sort-value="1998-07-12"><a href="http://fr.wikipedia.org/wiki/12_juillet" title="12 juillet">12</a> <a href="http://fr.wikipedia.org/wiki/Juillet_1998" title="Juillet 1998">juillet</a> <a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a></span>&nbsp;: 12 sortants dont 6 ne remettant pas en jeu
-            leur siège. 6 élus&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_majoritaire_plurinominal" title="Scrutin majoritaire plurinominal">scrutin majoritaire plurinominal</a> au niveau des <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fectures_du_Japon" title="Préfectures du Japon">préfectures</a>&nbsp;: 980 249 voix (1,75&nbsp;% des suffrages,
-                    6<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 1 élu dans la <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Wakayama" title="Préfecture de Wakayama">préfecture de Wakayama</a>,
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> national&nbsp;: 5 207 813 voix (9,28&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 5 élus.</li>
-            </ul>
-        </li>
-        <li><a href="http://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_japonaises_de_2000" title="Élections législatives japonaises de 2000">Élections législatives</a> du <span class="date-lien nowrap datasortkey" data-sort-value="2000-06-25"><a href="http://fr.wikipedia.org/wiki/25_juin" title="25 juin">25</a> <a
-                href="http://fr.wikipedia.org/wiki/Juin_2000" title="Juin 2000">juin</a> <a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a></span>&nbsp;: 19 sortants (8 titulaires de circonscription et 11 élus en <a href="http://fr.wikipedia.org/wiki/1996" title="1996">1996</a> à la proportionnelle). 22 élus (+3) dont 11 sortants, 4 anciens députés
-            réélus à cette occasion et 7 nouveaux arrivants&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_uninominal_majoritaire_%C3%A0_un_tour" title="Scrutin uninominal majoritaire à un tour">scrutin uninominal majoritaire</a> au niveau des districts électoraux&nbsp;: 2 053 736 voix (3,38&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon"
-                                                                                                                                                                                                                                                                                     title="Japon">Japon</a>),
-                    4 élus dont 3 sortants (dans les 1<sup>er</sup> et 4<sup>e</sup> districts d'<a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">Iwate</a> et le 14<sup>e</sup> de <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Kanagawa" title="Préfecture de Kanagawa">Kanagawa</a>) et 1
-                    nouveau député (dans le 3<sup>e</sup> district d'<a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">Iwate</a>). Le parti contrôle 3 des 4 circonscriptions de la <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">préfecture d'Iwate</a>, le fief
-                    électoral d'<a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a> (il y est lui-même député du 4<sup>e</sup> district), et y réalise un total de 40&nbsp;% des suffrages,
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> au niveau des blocs régionaux&nbsp;: 6 589 490 voix (11,01&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>), 18 élus
-                    dont 8 sortants (parmi lesquels 3 élus dans des circonscriptions en <a href="http://fr.wikipedia.org/wiki/1996" title="1996">1996</a>), 4 anciens députés retrouvant leurs sièges à cette occasion et 6 nouveaux arrivants.
-                </li>
-            </ul>
-        </li>
-        <li><a href="http://fr.wikipedia.org/w/index.php?title=%C3%89lections_%C3%A0_la_chambre_des_conseillers_du_Japon_de_2001&amp;action=edit&amp;redlink=1" class="new" title="Élections à la chambre des conseillers du Japon de 2001 (page inexistante)">Élections à la chambre des conseillers</a> du <span
-                class="date-lien nowrap datasortkey" data-sort-value="2001-07-29"><a href="http://fr.wikipedia.org/wiki/29_juillet" title="29 juillet">29</a> <a href="http://fr.wikipedia.org/wiki/Juillet_2001" title="Juillet 2001">juillet</a> <a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a></span>&nbsp;: 6 sortants dont 2 ne remettant pas en jeu leur
-            siège. 6 élus&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_majoritaire_plurinominal" title="Scrutin majoritaire plurinominal">scrutin majoritaire plurinominal</a> au niveau des <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fectures_du_Japon" title="Préfectures du Japon">préfectures</a>&nbsp;: 3 011 787 voix (5,54&nbsp;% des suffrages,
-                    5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 2 élus dans les <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_d%27Iwate" title="Préfecture d'Iwate">préfectures d'Iwate</a> et de <a href="http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Niigata" title="Préfecture de Niigata">Niigate</a>,
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal" title="Scrutin proportionnel plurinominal">scrutin proportionnel</a> national&nbsp;: 4 227 148 voix (7,72&nbsp;% des suffrages, 5<sup>e</sup> score du <a href="http://fr.wikipedia.org/wiki/Japon" title="Japon">Japon</a>) et 4 élus.</li>
-            </ul>
-        </li>
-    </ul>
-    <h2><span class="mw-headline" id="Direction">Direction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=3" title="Modifier la section : Direction"
-                                                                                                                                              class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a
-            href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=3" title="Modifier la section : Direction">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
-    <ul>
-        <li>Président&nbsp;: <a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></li>
-        <li>Liste des secrétaires généraux&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takeshi_Noda&amp;action=edit&amp;redlink=1" class="new" title="Takeshi Noda (page inexistante)">Takeshi Noda</a> (entrée au gouvernement, plus tard départ pour
-                    le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
-            </ul>
-        </li>
-        <li>Liste des présidents du Conseil de Recherche politique&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
-            </ul>
-        </li>
-        <li>Liste des présidents du Comité des Affaires de la <a href="http://fr.wikipedia.org/wiki/Di%C3%A8te_du_Japon" title="Diète du Japon">Diète</a>&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Toshihiro_Nikai" title="Toshihiro Nikai">Toshihiro Nikai</a> (plus tard départ pour le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti
-                    conservateur</a>)
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Keisuke_Nakanishi&amp;action=edit&amp;redlink=1" class="new" title="Keisuke Nakanishi (page inexistante)">Keisuke Nakanishi</a> (départ pour le <a
-                        href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/wiki/Hirohisa_Fujii" title="Hirohisa Fujii">Hirohisa Fujii</a></li>
-                <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Kenji_Yamaoka&amp;action=edit&amp;redlink=1" class="new" title="Kenji Yamaoka (page inexistante)">Kenji Yamaoka</a></li>
-            </ul>
-        </li>
-        <li>Liste des présidents du Groupe à la <a href="http://fr.wikipedia.org/wiki/Chambre_des_conseillers_(Japon)" title="Chambre des conseillers (Japon)">Chambre des conseillers</a>&nbsp;:
-            <ul>
-                <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takushi_Hirai&amp;action=edit&amp;redlink=1" class="new" title="Takushi Hirai (page inexistante)">Takushi Hirai</a> (plus tard départ pour le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
-                                                                                                                                                                                                                                                   title="Nouveau Parti conservateur">Parti conservateur</a>)
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/1998" title="1998">1998</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Chikage_%C5%8Cgi&amp;action=edit&amp;redlink=1" class="new" title="Chikage Ōgi (page inexistante)">Chikage Ōgi</a> (départ pour le <a
-                        href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Parti conservateur</a>)
-                </li>
-                <li><a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>-<a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Hideaki_Tamura&amp;action=edit&amp;redlink=1" class="new" title="Hideaki Tamura (page inexistante)">Hideaki Tamura</a></li>
-                <li><a href="http://fr.wikipedia.org/wiki/2001" title="2001">2001</a>-<a href="http://fr.wikipedia.org/wiki/2003" title="2003">2003</a>&nbsp;: <a href="http://fr.wikipedia.org/w/index.php?title=Takeo_Nishioka&amp;action=edit&amp;redlink=1" class="new" title="Takeo Nishioka (page inexistante)">Takeo Nishioka</a></li>
-            </ul>
-        </li>
-        <li>Conseiller suprême (fonction honorifique, <a href="http://fr.wikipedia.org/wiki/1999" title="1999">1999</a>-<a href="http://fr.wikipedia.org/wiki/2000" title="2000">2000</a>)&nbsp;: <a href="http://fr.wikipedia.org/wiki/Toshiki_Kaifu" title="Toshiki Kaifu">Toshiki Kaifu</a> (départ pour le <a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur"
-                                                                                                                                                                                                                                             title="Nouveau Parti conservateur">Parti conservateur</a>)
-        </li>
-    </ul>
-    <h2><span class="mw-headline" id="R.C3.A9f.C3.A9rences">Références</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=4" title="Modifier la section : Références"
+</div>
+<h2><span class="mw-headline" id="Articles_connexes">Articles connexes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=5"
+                                                                                                                                                          title="Modifier la section : Articles connexes"
                                                                                                                                                           class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a
-            href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=4" title="Modifier la section : Références">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
-
-    <div class="references-small decimal" style="column-count: 1;">
-        <div style="font-size: 85%">
-            <ol class="references">
-                <li id="cite_note-1"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">OZAWA, I., <i>日本 改造 計画</i>, éd. <i>Kodansha</i>, <a href="http://fr.wikipedia.org/wiki/1993" title="1993">1993</a>, réédité à plusieurs reprises, 258 p. (ISBN&nbsp;: 4062064820)</span>
-                </li>
-                <li id="cite_note-2"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                        href="http://books.google.fr/books?id=Gw20DhcK9n8C&amp;pg=PA161&amp;lpg=PA161&amp;dq=Liberal+Party+Ozawa+constitution&amp;source=bl&amp;ots=dqeAKdMPlL&amp;sig=Ca2n6_7m37wmZ1CibvlmGbDunjc&amp;hl=fr&amp;ei=gqIvSoibK9m6jAeS_aSMCw&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=4#PPA164,M1">I.
-                    OZAWA, trad. du japonais par J. PARTON «&nbsp;<i>A proposal for reforming the Japanese constitution (1999)</i>&nbsp;», <i>in</i> G. D. HOOK, G. McCORMACK, <i>Japan's contested Constitution&nbsp;: documents and analysis</i>, éd. Routledge, 2001, p. 161-176</a><small
-                        class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://books.google.fr/books?id=Gw20DhcK9n8C%26pg=PA161%26lpg=PA161%26dq=Liberal+Party+Ozawa+constitution%26source=bl%26ots=dqeAKdMPlL%26sig=Ca2n6_7m37wmZ1CibvlmGbDunjc%26hl=fr%26ei=gqIvSoibK9m6jAeS_aSMCw%26sa=X%26oi=book_result%26ct=result%26resnum=4#PPA164,M1&amp;title=I.%20OZAWA%2C%20trad.%20du%20japonais%20par%20J.%20PARTON%20%C2%AB%C2%A0A%20proposal%20for%20reforming%20the%20Japanese%20constitution%20(1999)%C2%A0%C2%BB%2C%20in%20G.%20D.%20HOOK%2C%20G.%20McCORMACK%2C%20Japan's%20contested%20Constitution%C2%A0%3A%20documents%20and%20analysis%2C%20%C3%A9d.%20Routledge%2C%202001%2C%20p.%20161-176"
-                        title="archive de I. OZAWA, trad. du japonais par J. PARTON «&nbsp;A proposal for reforming the Japanese constitution (1999)&nbsp;», in G. D. HOOK, G. McCORMACK, Japan's contested Constitution&nbsp;: documents and analysis, éd. Routledge, 2001, p. 161-176">archive</a>]
-                </small></span></li>
-                <li id="cite_note-3"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><abbr class="abbr indicateur-format" title="Document au format Portable Document Format (PDF) d'Adobe">[PDF]</abbr> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                                        href="http://www.liberal-international.org/contentFiles/files/Hatoyama%20Speech.pdf">Discours
-                    de Yukio Hatoyama devant le congrès de l'Internationale libérale</a><small class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://www.liberal-international.org/contentFiles/files/Hatoyama%2520Speech.pdf&amp;title=Discours%20de%20Yukio%20Hatoyama%20devant%20le%20congr%C3%A8s%20de%20l'Internationale%20lib%C3%A9rale"
-                        title="archive de Discours de Yukio Hatoyama devant le congrès de l'Internationale libérale">archive</a>]
-                </small></span></li>
-                <li id="cite_note-4"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                        href="http://www.nytimes.com/1998/11/20/world/japan-s-ruling-party-agrees-to-coalition-with-archrival.html">S.
-                    STROM, «&nbsp;<i>Japan's Ruling Party Agrees To Coalition With Archrival</i>&nbsp;», <i>The New York Times</i>, 20/11/1998</a><small class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://www.nytimes.com/1998/11/20/world/japan-s-ruling-party-agrees-to-coalition-with-archrival.html&amp;title=S.%20STROM%2C%20%C2%AB%C2%A0Japan's%20Ruling%20Party%20Agrees%20To%20Coalition%20With%20Archrival%C2%A0%C2%BB%2C%20The%20New%20York%20Times%2C%2020%2F11%2F1998"
-                        title="archive de S. STROM, «&nbsp;Japan's Ruling Party Agrees To Coalition With Archrival&nbsp;», The New York Times, 20/11/1998">archive</a>]
-                </small></span></li>
-                <li id="cite_note-5"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                        href="http://findarticles.com/p/articles/mi_m0XPQ/is_2000_April_3/ai_61635355/"><i>Kyodo
-                    News International', «&nbsp;</i>2ND LD: Ozawa's LP to quit ruling bloc, party split likely<i>&nbsp;»,</i> BNET<i>, 03/04/2000</i></a><small class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://findarticles.com/p/articles/mi_m0XPQ/is_2000_April_3/ai_61635355/&amp;title=Kyodo%20News%20International'%2C%20%C2%AB%C2%A02ND%20LD%3A%20Ozawa's%20LP%20to%20quit%20ruling%20bloc%2C%20party%20split%20likely%C2%A0%C2%BB%2C%20BNET%2C%2003%2F04%2F2000"
-                        title="archive de Kyodo News International', «&nbsp;2ND LD: Ozawa's LP to quit ruling bloc, party split likely&nbsp;», BNET, 03/04/2000">archive</a>]
-                </small></span></li>
-                <li id="cite_note-6"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                        href="http://search.japantimes.co.jp/cgi-bin/nn20021130a2.html">«&nbsp;<i>Hatoyama
-                    considering resignation</i>&nbsp;», <i>Japan Times</i>, 30/11/2002</a><small class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://search.japantimes.co.jp/cgi-bin/nn20021130a2.html&amp;title=%C2%AB%C2%A0Hatoyama%20considering%20resignation%C2%A0%C2%BB%2C%20Japan%20Times%2C%2030%2F11%2F2002"
-                        title="archive de «&nbsp;Hatoyama considering resignation&nbsp;», Japan Times, 30/11/2002">archive</a>]
-                </small></span></li>
-                <li id="cite_note-7"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><span class="indicateur-langue">(<abbr class="abbr" title="Langue&nbsp;: anglais">en</abbr>)</span> <a rel="nofollow" class="external text"
-                                                                                                                                                                                                                                                        href="http://www.voanews.com/english/archive/2002-12/a-2002-12-03-7-Leader.cfm?moddate=2002-12-03">«&nbsp;<i>Leader
-                    of Japan's Opposition Party to Resign</i>&nbsp;», <i>News VOA</i>, 03/12/2002</a><small class="cachelinks">&nbsp;[<a
-                        href="http://archive.wikiwix.com/cache/?url=http://www.voanews.com/english/archive/2002-12/a-2002-12-03-7-Leader.cfm?moddate=2002-12-03&amp;title=%C2%AB%C2%A0Leader%20of%20Japan's%20Opposition%20Party%20to%20Resign%C2%A0%C2%BB%2C%20News%20VOA%2C%2003%2F12%2F2002"
-                        title="archive de «&nbsp;Leader of Japan's Opposition Party to Resign&nbsp;», News VOA, 03/12/2002">archive</a>]
-                </small></span></li>
-            </ol>
-        </div>
-    </div>
-    <h2><span class="mw-headline" id="Articles_connexes">Articles connexes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;veaction=edit&amp;vesection=5" title="Modifier la section : Articles connexes"
-                                                                                                                                                              class="mw-editsection-visualeditor">modifier</a><span class="mw-editsection-divider"> | </span><a
-            href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=5" title="Modifier la section : Articles connexes">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
-    <ul>
-        <li><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></li>
-        <li><a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">Parti démocrate du Japon</a></li>
-        <li><a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></li>
-        <li><a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Nouveau Parti conservateur</a></li>
-    </ul>
-    <ul id="bandeau-portail" class="bandeau-portail">
-        <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:Politique" title="Portail de la politique"><img alt="Portail de la politique" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/48px-Society.svg.png" width="48" height="19"
-                                                                                                                                                             srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/72px-Society.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/96px-Society.svg.png 2x"
-                                                                                                                                                             data-file-width="96" data-file-height="38"></a></span> <span class="bandeau-portail-texte"><a href="http://fr.wikipedia.org/wiki/Portail:Politique"
-                                                                                                                                                                                                                                                           title="Portail:Politique">Portail de la
-            politique</a></span></span></li>
-        <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:%C3%89poque_contemporaine" title="Portail du monde contemporain"><img alt="Portail du monde contemporain"
-                                                                                                                                                                                   src="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/18px-Hannover_Gehry-Tower.jpg"
-                                                                                                                                                                                   width="18" height="24"
-                                                                                                                                                                                   srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/27px-Hannover_Gehry-Tower.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/36px-Hannover_Gehry-Tower.jpg 2x"
-                                                                                                                                                                                   data-file-width="960" data-file-height="1280"></a></span> <span class="bandeau-portail-texte"><a
-                href="http://fr.wikipedia.org/wiki/Portail:%C3%89poque_contemporaine" title="Portail:Époque contemporaine">Portail du monde contemporain</a></span></span></li>
-        <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:Japon" title="Portail du Japon"><img alt="Portail du Japon" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/33px-Flag_of_Japan.svg.png" width="33" height="22"
-                                                                                                                                                  class="thumbborder"
-                                                                                                                                                  srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/50px-Flag_of_Japan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/66px-Flag_of_Japan.svg.png 2x"
-                                                                                                                                                  data-file-width="900" data-file-height="600"></a></span> <span class="bandeau-portail-texte"><a href="http://fr.wikipedia.org/wiki/Portail:Japon" title="Portail:Japon">Portail
-            du Japon</a></span></span></li>
-    </ul>
+        href="http://fr.wikipedia.org/w/index.php?title=Parti_lib%C3%A9ral_du_Japon_(1998)&amp;action=edit&amp;section=5" title="Modifier la section : Articles connexes">modifier le code</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li><a href="http://fr.wikipedia.org/wiki/Shinshint%C5%8D" title="Shinshintō">Shinshintō</a></li>
+    <li><a href="http://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_du_Japon" title="Parti démocrate du Japon">Parti démocrate du Japon</a></li>
+    <li><a href="http://fr.wikipedia.org/wiki/Ichir%C5%8D_Ozawa" title="Ichirō Ozawa">Ichirō Ozawa</a></li>
+    <li><a href="http://fr.wikipedia.org/wiki/Nouveau_Parti_conservateur" title="Nouveau Parti conservateur">Nouveau Parti conservateur</a></li>
+</ul>
+<ul id="bandeau-portail" class="bandeau-portail">
+    <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:Politique" title="Portail de la politique"><img alt="Portail de la politique" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/48px-Society.svg.png"
+                                                                                                                                                                                width="48" height="19"
+                                                                                                                                                                                srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/72px-Society.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Society.svg/96px-Society.svg.png 2x"
+                                                                                                                                                                                data-file-width="96" data-file-height="38"></a></span> <span class="bandeau-portail-texte"><a
+            href="http://fr.wikipedia.org/wiki/Portail:Politique"
+            title="Portail:Politique">Portail de la
+        politique</a></span></span></li>
+    <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:%C3%89poque_contemporaine" title="Portail du monde contemporain"><img alt="Portail du monde contemporain"
+                                                                                                                                                                                                      src="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/18px-Hannover_Gehry-Tower.jpg"
+                                                                                                                                                                                                      width="18" height="24"
+                                                                                                                                                                                                      srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/27px-Hannover_Gehry-Tower.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hannover_Gehry-Tower.jpg/36px-Hannover_Gehry-Tower.jpg 2x"
+                                                                                                                                                                                                      data-file-width="960" data-file-height="1280"></a></span> <span class="bandeau-portail-texte"><a
+            href="http://fr.wikipedia.org/wiki/Portail:%C3%89poque_contemporaine" title="Portail:Époque contemporaine">Portail du monde contemporain</a></span></span></li>
+    <li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://fr.wikipedia.org/wiki/Portail:Japon" title="Portail du Japon"><img alt="Portail du Japon" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/33px-Flag_of_Japan.svg.png"
+                                                                                                                                                                     width="33" height="22"
+                                                                                                                                                                     class="thumbborder"
+                                                                                                                                                                     srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/50px-Flag_of_Japan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/66px-Flag_of_Japan.svg.png 2x"
+                                                                                                                                                                     data-file-width="900" data-file-height="600"></a></span> <span class="bandeau-portail-texte"><a
+            href="http://fr.wikipedia.org/wiki/Portail:Japon" title="Portail:Japon">Portail
+        du Japon</a></span></span></li>
+</ul>
 
 
-    <!--
-    NewPP limit report
-    Parsed by mw1149
-    CPU time usage: 0.580 seconds
-    Real time usage: 0.662 seconds
-    Preprocessor visited node count: 1289/1000000
-    Preprocessor generated node count: 8604/1500000
-    Post‐expand include size: 18316/2048000 bytes
-    Template argument size: 3085/2048000 bytes
-    Highest expansion depth: 10/40
-    Expensive parser function count: 0/500
-    Lua time usage: 0.096/10.000 seconds
-    Lua memory usage: 1.81 MB/50 MB
-    -->
+<!--
+NewPP limit report
+Parsed by mw1149
+CPU time usage: 0.580 seconds
+Real time usage: 0.662 seconds
+Preprocessor visited node count: 1289/1000000
+Preprocessor generated node count: 8604/1500000
+Post‐expand include size: 18316/2048000 bytes
+Template argument size: 3085/2048000 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/500
+Lua time usage: 0.096/10.000 seconds
+Lua memory usage: 1.81 MB/50 MB
+-->
 
-    <!-- Saved in parser cache with key frwiki:pcache:idhash:3905459-0!*!0!!fr!4!* and timestamp 20141019210150 and revision id 103071008
-     -->
-    <noscript>&lt;img src="//fr.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript>
+<!-- Saved in parser cache with key frwiki:pcache:idhash:3905459-0!*!0!!fr!4!* and timestamp 20141019210150 and revision id 103071008
+ -->
+<noscript>&lt;img src="//fr.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript>
 </div>
 
 <script src="js/base.js"></script>
 <script src="js/cnilkies.js"></script>
+<script src="js/highlight.pack.js"></script>
+<script>
+    hljs.configure({tabReplace: '    '});
+    hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>
